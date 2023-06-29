@@ -1,0 +1,236 @@
+<!DOCTYPE>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<title> </title>
+<style>
+body{
+  width:100%;
+  height:97%;
+  color:black;
+}
+
+*{
+  padding:0;
+  margin:0;
+  user-select:none;
+}
+a{
+  text-decoration: none;
+  cursor:pointer;
+  text-align: left;
+}
+ul{
+
+
+}
+ul li{
+display: inline-block;
+position: relative;
+padding:0% 0 10% 0;
+
+
+}
+
+
+ul li a{
+padding:10px 50px;
+text-decoration: none;
+color:white;
+width:60%;
+}
+
+
+
+ul li #dropdown1{
+position: absolute;
+display:none;
+border-radius:0px 0px 5px 5px;
+width:100%;
+top:10px;
+}
+
+ul li:hover #dropdown1{
+display:block;
+background:rgba(0,0,0,.8);
+padding-bottom:10%;
+/*border-left:1px white solid;
+border-right:1px white solid;
+border-bottom:1px white solid;*/
+}
+
+ul li #dropdown1 li{
+width:100%;
+position: relative;
+left:0;
+margin:0% 0 0% 0;
+padding:0 0;
+}
+
+ul li #dropdown1 li a{
+display:block;
+padding: 30% 0% 0 0px;
+text-align: center;
+position:static;
+width:100%;
+}
+
+ul li #dropdown1 li a:hover{
+font-size:3vw;
+}
+
+#overall{
+  background-color: grey;
+  width:95%;
+  height:100%;
+  border-radius:10%; /*border-radius:15px;*/
+  box-shadow: 1px 5px 10px darkgrey;
+  margin-left:auto;
+  margin-right:auto;
+  padding:2%;
+}
+#navcontainer{
+  top:0; /*Puts nav bar at the top of the screen */
+position: fixed;
+width:100%;
+height:7.5%;
+color:white;
+background:rgba(0,0,0,1);
+padding-bottom:.5%;
+border-radius:0px 0px 50px 50px;
+}
+
+#mainnav{
+  position: relative;
+  left:10%;
+}
+#mainnav li{
+  width:15%;
+  position: relative;
+  left:100;
+margin:0 .5% 0 .5%;
+}
+#mainnav li a{
+position: absolute;
+font-size:1.5vw;
+}
+
+#mainnav li a:hover{
+font-size:2vw;
+}
+
+
+h1{
+  margin-top:10%;
+  margin-bottom:2%
+}
+#sectioncontainer{
+  display:inline;
+  width:100%;
+  height:100%;
+}
+.dropdownhighlight{
+  width:1%;
+}
+.dropdownhighlight:hover{
+  /*border-right: 1px white solid;
+  border-left: 1px white solid;
+  border-top: 1px white solid;*/
+}
+.defaultsection{
+  background:rgba(238,238,238,1);
+  color:black;
+  width:100%; //changed in jquery
+  max-height:10%;
+  margin:1% 1% 1% 1%;
+  padding:1% 1% 5% 1%;
+  display:inline-block;
+  border-radius: 15px;
+  box-shadow:1px 5px 5px black;
+  user-select:all;
+}
+
+footer{
+text-align: center;
+  color:white;
+/*  margin: 2.5% 0 0 0; */
+margin-top:4%;
+margin-left: auto;
+margin-right: auto;
+
+  border-bottom: 50px solid black;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      height: 0;
+      width: 80%;
+}
+
+
+@media only screen and (max-width:500px){
+  body{
+    width:500px;
+  }
+}
+</style>
+
+<script>
+var overall = document.getElementById('overall');
+
+$(document).ready(function(){
+  var totalnum1 = $('#overall div');
+  var try1 = 1000/totalnum1.length;
+  let text = try1.toString();
+  var trythis = text.concat("px");
+$('#overall div').css("width", trythis);
+});
+</script>
+
+
+</head>
+
+
+<body>
+  <div id = "navcontainer">
+  <ul id = "mainnav">
+<li><a href = ""> Section 2 </a></li>
+<li><a href = ""> Section 3 </a></li>
+<li><a href = ""> Section 4 </a></li>
+<li class = "dropdownhighlight"><a> ??? </a>
+    <ul id  = "dropdown1">
+      <li><a href = ""> 1ccccccc? </a></li>
+      <li><a href = ""> 2? </a></li>
+      <li><a href = ""> 3? </a></li>
+    </ul>
+</li>
+  </ul>
+</div>
+
+  <h1> Overall?</h1>
+<!--  I'm planning on having the dropdown menu in this whitespace. It should be very similar to
+  the current cotton candy one (not the one based in Github). The question is should it be directly inline/incased with
+  the website title or should it be right on top on the "main content", as it appears now. I'm leaning towards
+  the former.-->
+<div id = "overall">
+
+<div class = "defaultsection" id = "x">
+Section 1 <br>
+Maybe just an "about this website" section
+</div>
+<div class = "defaultsection" >
+Section 2
+<br> I'll probably have a picture link here with a small description of whats in it
+</div>
+<div class = "defaultsection">
+Section 3 <br>
+Should we model this website after Crunchyroll/Nickelodeon
+</div>
+
+
+</div>
+
+<footer>
+Links Links. Nothing but links!! (Might put the footer within the main content section)
+</footer>
+
+</body>
+</html>
